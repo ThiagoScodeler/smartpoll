@@ -62,11 +62,16 @@ include ("connection.php");
 						</p>
 						<?php } ?>
 					</div>
+
 					<div class="message"></div>
+
+					<div id="show">
+					<input type="button" name="" id="view" class="btn btn-large btn-block btn-success" value="View Results">
+					</div>
 
 					<div class="mastfoot">
 						<div class="inner">
-							<p>Created by: <?php echo $user_name ?></p>
+							
 							<p>Creation Time: <?php echo $date_question ?>  |  Expires in: <?php echo $date_expiration ?> </p>
 						</div>
 					</div>
@@ -75,10 +80,6 @@ include ("connection.php");
 			</div>
 
 		</div>
-
-		
-
-	<input type="button" name="" id="view" class="btn btn-primary" value="View Results">
 
 <!--
 	<h2 id="result">

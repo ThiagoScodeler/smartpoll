@@ -6,6 +6,7 @@ $("input").click(function(e) {
 	//alert(idClicked);
 
 	$("#hiden").hide("slow");
+	$("#show").show(1000);
 
 	$.ajax({
 		url: 'insertVote.php?id='+idClicked,
@@ -20,9 +21,6 @@ $("input").click(function(e) {
 		}
 	});
 });
-
-
-
 
 $(function(){
 	$('#see').submit(function(){

@@ -57,6 +57,9 @@ body {
   padding: 30px;
 }
 
+#show {
+  display: none;
+}
 
 /*
  * Header
