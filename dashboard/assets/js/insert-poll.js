@@ -6,9 +6,11 @@ $(function(){
 			data: $("#form").serialize(),
 			success: function( data ) {
 				if(data == 'true'){
-					$('.result').html('<div class="alert alert-success">Poll inserted successfully!</div>');
+					$('.result').addClass("alert alert-success");
+					$('.result').html('Poll inserted successfully!<a class="close" data-dismiss="alert" href="#">&times;</a>');
 				}else{
-					$('.result').html('<div class="alert alert-danger">Fault to insert poll!</div>');
+					$('.result').addClass("alert alert-danger");
+					$('.result').html('Fault to insert poll!<a class="close" data-dismiss="alert" href="#">&times;</a>');
 				};
 			}
 		});
