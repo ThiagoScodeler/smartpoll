@@ -5,21 +5,28 @@ $("input").click(function(e) {
 	var idClicked = e.target.id;
 	//alert(idClicked);
 
-	$("#hiden").hide("slow");
-	$("#show").show(1000);
+	if (idClicked == "view") {
 
-	$.ajax({
-		url: 'insertVote.php?id='+idClicked,
-		type: 'POST',
-		data: $('.message').serialize(),
-		success: function( data ) {
-			if(data == 'true'){
-				$('.message').html('<div class="alert alert-info">Thanks for your vote!</div>');
-			}else{
-				$('.message').html('<div class="alert alert-error">Fault to insert your vote!</div>');
-			};
-		}
-	});
+	} else {
+
+		$("#hiden").hide("slow");
+		$("#showResult").show(1000);
+
+		$.ajax({
+			url: 'includes/insertVote.php?id='+idClicked,
+			type: 'POST',
+			data: $('.message').serialize(),
+			success: function( data ) {
+				if(data == 'true'){
+					$('.message').addClass("alert alert-info");
+					$('.message').html('Thanks for your vote!');
+				}else{
+					$('.message').addClass("alert alert-danger");
+					$('.message').html('Fault to insert your vote!');
+				};
+			}
+		});
+	}
 });
 
 $(function(){

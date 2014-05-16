@@ -57,8 +57,12 @@ body {
   padding: 30px;
 }
 
-#show {
+#showResult {
   display: none;
+}
+
+h3 {
+  color: black;
 }
 
 /*

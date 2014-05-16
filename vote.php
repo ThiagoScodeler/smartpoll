@@ -1,5 +1,5 @@
 <?php
-include ("connection.php");
+include ("includes/connection.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,8 +65,27 @@ include ("connection.php");
 
 					<div class="message"></div>
 
-					<div id="show">
-					<input type="button" name="" id="view" class="btn btn-large btn-block btn-success" value="View Results">
+					<div id="showResult">
+						<input type="button" name="" id="view" class="btn btn-large btn-block btn-success" value="View Results"
+						data-toggle="modal" data-target="#myModal">
+					</div>
+
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h3 class="modal-title" id="myModalLabel">Result</h3>
+								</div>
+								<div class="modal-body">
+									...
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
 					</div>
 
 					<div class="mastfoot">
@@ -81,17 +100,10 @@ include ("connection.php");
 
 		</div>
 
-<!--
-	<h2 id="result">
+		<script src="bootstrap/js/jquery-2.1.1.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="js/insertVote.js" type="text/javascript"></script>
 
-	</h2> 
-
--->
-
-<script src="bootstrap/js/jquery-2.1.1.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="js/insertVote.js" type="text/javascript"></script>
-
-</body>
-</html>
+	</body>
+	</html>
