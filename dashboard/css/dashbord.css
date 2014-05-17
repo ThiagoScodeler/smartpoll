@@ -75,6 +75,13 @@ body {
   margin-top: 0;
 }
 
+.group-btn{
+  text-align: right ;
+}
+
+.btnEdit, .btnRemove{
+  margin-left: 5px;
+}
 
 /*
  * Placeholder dashboard ideas
