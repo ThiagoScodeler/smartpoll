@@ -1,5 +1,6 @@
-$(function () 
-{
+function loadData(){
+  $(function () 
+  {
     //-----------------------------------------------------------------------
     // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
     //-----------------------------------------------------------------------
@@ -11,6 +12,7 @@ $(function ()
       success: function(json)          //on recieve of reply
       {
 
+        //check if have one poll registered
         if (json.length>0) {
 
         //--------------------------------------------------------------------
@@ -74,8 +76,9 @@ $(function ()
           btnRemove = ($('<button>', {
             'type': 'button', 
             'class': 'btn btn-danger btn-xs btnRemove', 
-            'data-toggle' : 'modal',
-            'data-target' : '#modalRemove',
+            //'data-toggle' : 'modal',
+            //'data-target' : '#modalRemove',
+            'id' : json[0].id,
             'html': '<span class="glyphicon glyphicon-remove"></span> Remove'}).button()
           );
           btnRemove.appendTo($(divBtn));
@@ -134,16 +137,53 @@ $(function ()
               btnRemove = ($('<button>', {
                 'type': 'button', 
                 'class': 'btn btn-danger btn-xs btnRemove', 
-                'data-toggle' : 'modal',
-                'data-target' : '#modalRemove',
+                //'data-toggle' : 'modal',
+                //'data-target' : '#modalRemove',
+                'id' : json[i].id,
                 'html': '<span class="glyphicon glyphicon-remove"></span> Remove'}).button()
               );
               btnRemove.appendTo($(divBtn));
 
             };
-};        
+          };        
         //recommend reading up on jquery selectors they are awesome 
         // http://api.jquery.com/category/selectors/
       } 
     });
 }); 
+};
+
+//load Polls 
+$(function () {
+  loadData();
+});
+
+
+$( document ).on('click', '.btnRemove', function() {
+
+  //show Modal
+  $('#modalRemove').modal('show');
+
+  //get Poll id
+  var id = $(this).attr('id');
+
+  $( document ).on('click', '.btnConfirmRemove', function() {
+    $.ajax({
+      url:'includes/removePoll.php',
+      type: 'POST',
+      data: 'id='+id,
+      success: function( data ) {
+        if(data == 'true'){
+          //reload Polls
+          $('#output').html('');
+          loadData();
+          
+          //close Modal
+          $('#modalRemove').modal('hide');
+        };
+      }
+    });
+
+  });
+
+});
