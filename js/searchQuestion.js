@@ -10,15 +10,16 @@ $(document).ready(function() {
 				divP = document.createElement('p');
 				$(divP).addClass('lead').appendTo($("#output"));
 
-				var link = $('<a>', {
-					class: "btn btn-large btn-block btn-danger",
-					href: "vote.php?id="+data[i].id,
-					text: data[i].question
+				var input = $('<input>', {
+					'type': 'button',
+					id: data[i].id,
+					"class": "btn btn-large btn-block btn-danger",
+					value: data[i].question
+
 				});
 
-				link.appendTo($(divP));
-
-
+				input.appendTo($(divP));
+				
 			};
 
 		} 
