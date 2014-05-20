@@ -1,6 +1,6 @@
-$("#output").click(function(e) {
+$(document).on('click', '.btn-danger', function(e) {
 
-	$("#output").hide("slow");
+	$(".output").hide("slow");
 
 	e.preventDefault();
 
@@ -15,7 +15,7 @@ $("#output").click(function(e) {
 			for (var i = 0; i < data.length; i++) {
 
 				divP = document.createElement('p');
-				$(divP).addClass('lead').appendTo($("#output_answer"));
+				$(divP).addClass('lead').appendTo($(".output_answer"));
 
 				var input = $('<input>', {
 					'type': 'button',
@@ -30,7 +30,7 @@ $("#output").click(function(e) {
 			};
 
 			divPResult = document.createElement('p');
-			$(divPResult).addClass('lead').appendTo($("#showResult"));
+			$(divPResult).addClass('lead').appendTo($(".showResult"));
 
 			var inputResult = $('<input>', {
 				'type': 'button',

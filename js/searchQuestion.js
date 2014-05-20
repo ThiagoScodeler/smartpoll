@@ -8,7 +8,7 @@ $(document).ready(function() {
 			for (var i = 0; i < data.length; i++) {
 
 				divP = document.createElement('p');
-				$(divP).addClass('lead').appendTo($("#output"));
+				$(divP).addClass('lead').appendTo($(".output"));
 
 				var input = $('<input>', {
 					'type': 'button',

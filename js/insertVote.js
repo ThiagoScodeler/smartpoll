@@ -1,12 +1,12 @@
-$("#output_answer").click(function(e) {
+$(document).on('click', '.btn-primary', function(e) {
 
-	$("#output_answer").hide("slow");
+	$(".output_answer").hide("slow");
 
 	e.preventDefault();
 
 	var idClicked = e.target.id;
 
-	$("#showResult").show(1000);
+	$(".showResult").show(1000);
 
 	$.ajax({
 		url: 'includes/insertVote.php?id='+idClicked,
