@@ -8,28 +8,45 @@ $("#showResult").click(function(e) {
 	var idClicked = e.target.id;
 
 	$.ajax({
-		url: 'includes/getDataResult.php?id='+idClicked,
-		data: '',
+		url: 'includes/getDataResult.php',
+		type: 'POST',
+		data: 'id='+idClicked,
 		dataType: 'json',
 		success: function(data) {
 
+			var total;
+
 			for (var i = 0; i < data.length; i++) {
+				total = total + parseInt(data[i].total);
+			};
 
-				divP = document.createElement('p');
-				$(divP).addClass('lead').appendTo($(".modal-body"));
+			progress = $('<div>',{
+				'class' : 'progress progress-striped active'
+			}).appendTo($('.modal-body'));
 
-				var input = $('<input>', {
-					'type': 'button',
-					id: data[i].id,
-					"class": "btn btn-large btn-block btn-primary",
-					value: data[i].answer_id
 
-				});
+			for (var i = 0; i < answer.length; i++) {
+				totalAnswer = parseInt(answer[i].total);
+				var percent = ((totalAnswer/total)*100);
+				alert(percent);
 
-				input.appendTo($(".modal-body"));
+				divAnswer = $('<div>',{
+					'class' : 'progress-bar',
+					'role' : 'progressbar',
+					'aria-valuenow' : percent,
+					'aria-valuemax' :'100',
+					'style' : 'width: '+percent+'%'
+				}).appendTo(progress);
+
+				spanAnswer = $('span',{
+					'class' : 'sr-only',
+					'text' : percent+'% Complete'
+				}).appendTo(divAnswer);
 
 			};
 
 		} 
 	});
 });
+
+
