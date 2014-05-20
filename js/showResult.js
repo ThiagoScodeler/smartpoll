@@ -29,7 +29,7 @@ $(".showResult").click(function(e) {
 
 				textAnswer = ($('<span>',{
 					'class': 'text-result',
-					'text': data[i].answer
+					'text': data[i].answer+" ("+data[i].total+" votes)"
 				}).appendTo(divProgressAnswer));
 
 

@@ -13,7 +13,7 @@ $(document).ready(function() {
 				var input = $('<input>', {
 					'type': 'button',
 					id: data[i].id,
-					"class": "btn btn-large btn-block btn-danger btn-lg",
+					"class": "btn btn-large btn-block btn-danger btn-lg showAnswers",
 					value: data[i].question
 
 				});

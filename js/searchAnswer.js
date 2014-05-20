@@ -1,4 +1,4 @@
-$(document).on('click', '.btn-danger', function(e) {
+$(document).on('click', '.showAnswers', function(e) {
 
 	$(".output").hide("slow");
 
