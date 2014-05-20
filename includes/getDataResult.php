@@ -9,8 +9,7 @@ include ("connection.php");
 // 2) Query database for data
 //--------------------------------------------------------------------------
 
-//$id = $_POST['id'];
-$id=3;
+$id = $_POST['id'];
 
 $array = array();
 

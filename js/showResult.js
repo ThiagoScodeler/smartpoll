@@ -1,6 +1,8 @@
-$("#showResult").click(function(e) {
+$(".showResult").click(function(e) {
 
-	$("#showResult").hide("slow");
+	//clear modal area
+	$('.modal-body').html('');
+
 	$(".message").hide("slow");
 
 	e.preventDefault();
@@ -14,35 +16,37 @@ $("#showResult").click(function(e) {
 		dataType: 'json',
 		success: function(data) {
 
-			var total;
-
+			var total=0;
+			
 			for (var i = 0; i < data.length; i++) {
 				total = total + parseInt(data[i].total);
 			};
+			
+			for (var i = 0; i < data.length; i++) {
+				divProgressAnswer = ($('<div>',{
+					'text': '<span class="text-result">'+data[i].answer+'</div>'
+				}).appendTo('.modal-body'));
+
+
 
 			progress = $('<div>',{
-				'class' : 'progress progress-striped active'
-			}).appendTo($('.modal-body'));
+					'class' : 'progress progress-striped active'
+				}).appendTo(divProgressAnswer);
 
+				
 
-			for (var i = 0; i < answer.length; i++) {
-				totalAnswer = parseInt(answer[i].total);
+				totalAnswer = parseInt(data[i].total);
 				var percent = ((totalAnswer/total)*100);
-				alert(percent);
-
-				divAnswer = $('<div>',{
-					'class' : 'progress-bar',
-					'role' : 'progressbar',
-					'aria-valuenow' : percent,
-					'aria-valuemax' :'100',
-					'style' : 'width: '+percent+'%'
-				}).appendTo(progress);
-
-				spanAnswer = $('span',{
-					'class' : 'sr-only',
-					'text' : percent+'% Complete'
-				}).appendTo(divAnswer);
-
+				progress.append(
+					$('<div>',{
+						'class' : 'progress-bar',
+						'role' : 'progressbar',
+						'aria-valuenow' : percent,
+						'aria-valuemin' : '0',
+						'aria-valuemax' :'100',
+						'style' : 'width: '+percent+'%',
+						'text': Math.round(percent)+'%'
+					}));
 			};
 
 		} 
