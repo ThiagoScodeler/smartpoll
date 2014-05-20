@@ -20,7 +20,7 @@ $(document).on('click', '.btn-danger', function(e) {
 				var input = $('<input>', {
 					'type': 'button',
 					id: data[i].id,
-					"class": "btn btn-large btn-block btn-primary",
+					"class": "btn btn-large btn-block btn-primary btn-lg",
 					value: data[i].answer
 
 				});
@@ -35,7 +35,7 @@ $(document).on('click', '.btn-danger', function(e) {
 			var inputResult = $('<input>', {
 				'type': 'button',
 				id: idClicked,
-				"class": "btn btn-large btn-block btn-success",
+				"class": "btn btn-large btn-block btn-success btn-lg",
 				'data-toggle': "modal",
 				'data-target': "#myModal",
 				value: "View Results"

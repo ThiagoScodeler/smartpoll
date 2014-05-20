@@ -3,7 +3,8 @@ $(".showResult").click(function(e) {
 	//clear modal area
 	$('.modal-body').html('');
 
-	$(".message").hide("slow");
+	//$(".message").hide("slow");
+
 
 	e.preventDefault();
 
@@ -24,14 +25,17 @@ $(".showResult").click(function(e) {
 			
 			for (var i = 0; i < data.length; i++) {
 				divProgressAnswer = ($('<div>',{
-					'text': '<span class="text-result">'+data[i].answer+'</div>'
 				}).appendTo('.modal-body'));
 
+				textAnswer = ($('<span>',{
+					'class': 'text-result',
+					'text': data[i].answer
+				}).appendTo(divProgressAnswer));
 
 
-			progress = $('<div>',{
+				progress = $('<div>',{
 					'class' : 'progress progress-striped active'
-				}).appendTo(divProgressAnswer);
+				}).appendTo('.modal-body');
 
 				
 
