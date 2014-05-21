@@ -1,11 +1,16 @@
 $(document).on('click', '.btn-primary', function(e) {
 
-	$(".output_answer").hide("slow");
-
 	e.preventDefault();
 
+	$(".output_answer").hide("slow");
+	
 	var idClicked = e.target.id;
 
+	$.cookie(($.cookie('idPollClicked')), ($.cookie('idPollClicked')), {
+		expires : 1
+	});
+
+	//show button to view result
 	$(".showResult").show(1000);
 
 	$.ajax({
@@ -22,5 +27,4 @@ $(document).on('click', '.btn-primary', function(e) {
 			};
 		}
 	});
-	
 });

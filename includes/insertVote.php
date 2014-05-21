@@ -23,7 +23,6 @@ $sqlInsertVote = mysql_query("insert into result (question_id, answer_id) VALUES
 //close connection
 mysql_close($conn);
 
-
 if(($sqlInsertVote)) {
 	print 'true';
 }else {
