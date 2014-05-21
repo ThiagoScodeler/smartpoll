@@ -36,8 +36,22 @@
 					</div>
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#">Dashboard</a></li>
-							<li><a href="#">Settings</a></li>
+							<li class="dropdown">
+								<a id="dashboard-btn" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Dashboard <b class="caret"></b></a>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dashboard-btn">
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="polls.html">Polls</a>
+									</li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="insert-poll.html">Insert Poll</a>
+									</li>
+									<li role="presentation" class="divider"></li>
+									<li role="presentation">
+										<a role="menuitem" tabindex="-1" href="results.html">Results</a>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#" class="changePassword">Change Password</a></li>
 							<li><a href="#">Help</a></li>
 							<li><a href="#">Logout</a></li>
 						</ul>
@@ -54,15 +68,55 @@
 							<li><a href="polls.html">Polls</a></li>
 							<li><a href="insert-poll.html">Insert Poll</a></li>
 							<li><a href="results.html">Results</a></li> 
-							<li><a href="#">Export</a></li>
 						</ul>
 
 					</div>
 					<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 						<h1 class="page-header">Dashboard</h1>
 
+						<!-- Modal -->
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
+									</div>
+									<div class="modal-body">
 
+										<div class="login-panel panel panel-default">
+											<div class="panel-heading">
+												<h3 class="panel-title">Change Password</h3>
+											</div>
+											<div class="panel-body">
+												<form id="form-login" role="form" method="post">
+													<fieldset>
+														<div class="form-group">
+															<input class="form-control" placeholder="Password" id="password" name="password" type="password" required="">
+														</div>
+														<div class="form-group">
+															<input class="form-control" placeholder="New Password" id="newPassword" name="newPassword" type="newPassword" required="">
+														</div>
+														<div class="form-group">
+															<input class="form-control" placeholder="Confirm New Password" id="confirmNewPassword" name="confirmNewPassword" type="confirmNewPassword" required="">
+														</div>
+														<div class="message">
+
+														</div>
+														<input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign in" name="" placeholder="">
+													</fieldset>
+
+												</form>
+
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
 
 					</div>
 				</div>
@@ -72,6 +126,7 @@
 			<script src="../bootstrap/js/jquery-2.1.1.min.js"></script>
 			<!-- Include all compiled plugins (below), or include individual files as needed -->
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
-			<script src="js/docs.min.js"></script>
+			<script src="js/changePassword.js"></script>
+			
 		</body>
 		</html>

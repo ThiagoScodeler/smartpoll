@@ -27,7 +27,7 @@ $(document).on('click', '.showAnswers', function(e) {
 
 	if ( $.cookie(idClicked) == idClicked ){
 		$('.message').addClass('alert alert-danger');
-		$('.message').html('You already participated this poll!');
+		$('.message').html('You already participated in this poll!');
 
 		//show button to view result
 		$(".showResult").show(1000);
