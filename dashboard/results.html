@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +55,7 @@
 									</li>
 								</ul>
 							</li>
-							<li><a href="#">Settings</a></li>
+							<li><a href="#" class="changePassword">Change Password</a></li>
 							<li><a href="#">Help</a></li>
 							<li><a href="#">Logout</a></li>
 						</ul>
@@ -84,20 +85,45 @@
 				</div>
 			</div>
 
-			<!-- Modal Remove -->
-			<div class="modal fade" id="modalRemove" tabindex="-1" role="dialog" aria-labelledby="modalRemoveLabel" aria-hidden="true">
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							<h4 class="modal-title" id="modalRemoveLabel">Remove Poll</h4>
+
 						</div>
 						<div class="modal-body">
-							Are you sure you want to remove this poll?
+
+							<div class="login-panel panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Change Password</h3>
+								</div>
+								<div class="panel-body">
+									<form id="form-login" role="form" method="post">
+										<fieldset>
+											<div class="form-group">
+												<input class="form-control" placeholder="Password" id="password" name="password" type="password" required="">
+											</div>
+											<div class="form-group">
+												<input class="form-control" placeholder="New Password" id="newPassword" name="newPassword" type="password" required="">
+											</div>
+											<div class="form-group">
+												<input class="form-control" placeholder="Confirm New Password" id="confirmNewPassword" name="confirmNewPassword" type="password" required="">
+											</div>
+											<div class="message">
+
+											</div>
+											<input type="submit" class="btn btn-lg btn-primary btn-block" value="Change" name="" placeholder="">
+										</fieldset>
+
+									</form>
+
+								</div>
+							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-danger btnConfirmRemove">Confirm</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 						</div>
 					</div>
 				</div>
@@ -111,5 +137,6 @@
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
 			<!-- Custom Scripts -->
 			<script src="js/showResults.js" type="text/javascript"></script>
+			<script src="js/changePassword.js"></script>
 		</body>
 		</html>

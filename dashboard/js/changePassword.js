@@ -7,21 +7,49 @@ $(".changePassword").click(function(e) {
 
 
 $('#form-login').submit(function(){
-  
-  $.ajax({
+
+	var newPassword = $("#newPassword").val();
+
+	var confirmNewPassword = $("#confirmNewPassword").val();
+
+
+	if (newPassword == confirmNewPassword){
+	
+	$.ajax({
     type: 'POST',
     url:  'includes/changePassword.php',
     data: $('#form-login').serialize(),
     success: function( data ) {
 
       if(data == 1){
-        window.location.href = 'dashboard/index.html';
+        $('.message').removeClass('alert-danger');
+      	$('.message').addClass("alert alert-success");
+        $('.message').html('Success Change Password!');
+        
       }else{
-        $('.message').addClass("alert alert-danger");
-        $('.message').html('Email or Password Incorrect!');
+
+      	if(data == 0){
+
+      	$('.message').addClass("alert alert-danger");
+        $('.message').html('Actual Password is Incorrect!');
+
+      	} else {
+
+      	$('.message').addClass("alert alert-danger");
+        $('.message').html('Fault in Change the Password!');
+
+      	}
+
       };
     }
   });
+	
+	}else{
+  
+		$('.message').addClass('alert alert-danger');
+		$('.message').html('Password and New Password are different!');
+
+	}
 
   return false;
 });
