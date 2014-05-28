@@ -64,14 +64,14 @@ function loadData(){
             'class' : 'group-btn'
           }).appendTo($(pBody));
 
-          btnEdit = ($('<button>', {
-            'type' : 'button', 
-            'class' : 'btn btn-warning btn-xs btnEdit',
+        //btnEdit = ($('<button>', {
+        //  'type' : 'button', 
+        //  'class' : 'btn btn-warning btn-xs btnEdit',
         //  'data-toggle' : 'modal',
         //  'data-target' : '#modal',
-            'html' : '<span class="glyphicon glyphicon-edit"></span> Edit'}).button()
-          );
-          btnEdit.appendTo($(divBtn));
+        //  'html' : '<span class="glyphicon glyphicon-edit"></span> Edit'}).button()
+        //);
+        //btnEdit.appendTo($(divBtn));
 
           btnRemove = ($('<button>', {
             'type': 'button', 
@@ -123,14 +123,14 @@ function loadData(){
                 'class' : 'group-btn'
               }).appendTo($(pBody));
 
-              btnEdit = ($('<button>', {
-                'type' : 'button', 
-                'class' : 'btn btn-warning btn-xs btnEdit',
-             // 'data-toggle' : 'modal',
-             // 'data-target' : '#myModal',
-                'html' : '<span class="glyphicon glyphicon-edit"></span> Edit'}).button()
-              );
-              btnEdit.appendTo($(divBtn));
+            //btnEdit = ($('<button>', {
+            //  'type' : 'button', 
+            //  'class' : 'btn btn-warning btn-xs btnEdit',
+            //  'data-toggle' : 'modal',
+            //  'data-target' : '#myModal',
+            //  'html' : '<span class="glyphicon glyphicon-edit"></span> Edit'}).button()
+            //);
+            //btnEdit.appendTo($(divBtn));
 
               btnRemove = ($('<button>', {
                 'type': 'button', 
