@@ -2,6 +2,10 @@ $(document).on('click', '.showAnswers', function(e) {
 
 	$(".output").hide("slow");
 
+	$("#choose_poll").hide("fast");
+
+	$("#choose_answer").show(1000);
+
 	e.preventDefault();
 
 	var idClicked = e.target.id;

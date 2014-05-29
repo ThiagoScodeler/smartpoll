@@ -65,6 +65,10 @@ h3 {
   color: black;
 }
 
+#choose_answer {
+  display: none;
+}
+
 .text-result{
   font-size: 16px;
   color: black;
