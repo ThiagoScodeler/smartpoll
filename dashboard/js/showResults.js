@@ -58,7 +58,7 @@ function loadData(){
           $(pBody).addClass('panel-body')
           .html('<h4>'+json[0].question+'</h4>')
           .appendTo($(divCollapseBody));
-          
+
           //function for show result with progress bar
           showResult(pBody, json[0].id);
 
@@ -112,18 +112,14 @@ function loadData(){
 }); 
 };
 
+
 //load Polls 
 $(function () {
   loadData();
 });
 
-
-
-
-
 function showResult(elementToAppend ,id) {
 
-  
   $.ajax({
     url: 'includes/getDataResult.php',
     type: 'POST',
@@ -146,12 +142,9 @@ function showResult(elementToAppend ,id) {
           'text': data[i].answer+" ("+data[i].total+" votes)"
         }).appendTo(divProgressAnswer));
 
-
         progress = $('<div>',{
           'class' : 'progress'
         }).appendTo(elementToAppend);
-
-        
 
         totalAnswer = parseInt(data[i].total);
         var percent = ((totalAnswer/total)*100);
@@ -167,8 +160,19 @@ function showResult(elementToAppend ,id) {
           }));
       };
 
+      //button
+      divBtn=$('<div>',{
+        'class' : 'group-btn'
+      }).appendTo(elementToAppend);
+
+      btnRemove = ($('<button>', {
+        'type': 'button', 
+        'class': 'btn btn-warning btnShowChart', 
+        'id' : id,
+        'html': 'Show Pie Chart'}).button()
+      );
+      btnRemove.appendTo($(divBtn));
+
     } 
   });
 };
-
-

@@ -129,14 +129,37 @@
 				</div>
 			</div>
 
+			<!-- Modal for pie chart -->
+			<div class="modal fade" id="modalPieChart" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="modalTitle">Pie Chart</h4>
+						</div>
+						<div class="modal-body">
+							
+							<div id="pieChart" style="min-width: 500px; height: 400px; margin: 0 auto"></div>
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
 
 
 			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 			<script src="../bootstrap/js/jquery-2.1.1.min.js"></script>
 			<!-- Include all compiled plugins (below), or include individual files as needed -->
 			<script src="../bootstrap/js/bootstrap.min.js"></script>
+			<script src="Highcharts/js/highcharts.js"></script>
+			<script src="Highcharts/js/modules/exporting.js"></script>
+
 			<!-- Custom Scripts -->
 			<script src="js/showResults.js" type="text/javascript"></script>
 			<script src="js/changePassword.js"></script>
+			<script src="js/showPieChart.js"></script>
 		</body>
 		</html>
