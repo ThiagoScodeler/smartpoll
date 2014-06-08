@@ -7,7 +7,7 @@ $('#form-login').submit(function(){
     success: function( data ) {
 
       if(data == 1){
-        window.location.href = 'dashboard/index.html';
+        window.location.href = 'index.php';
       }else{
         $('.message').addClass("alert alert-danger");
         $('.message').html('Email or Password Incorrect!');
