@@ -14,6 +14,9 @@
   //--------------------------------------------------------------------------
   // 3) Query database for data
   //--------------------------------------------------------------------------
+  $sql  = "DELETE FROM result WHERE question_id = {$idPoll}";
+  $delete = mysql_query($sql); //execute query
+  
   $sql  = "DELETE FROM question WHERE id = {$idPoll}";
 
   $delete = mysql_query($sql); //execute query

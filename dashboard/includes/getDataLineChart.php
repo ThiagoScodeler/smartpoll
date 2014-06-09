@@ -9,8 +9,8 @@ include ("connection.php");
 // 2) Query database for data
 //--------------------------------------------------------------------------
 
-//$month = $_POST['month'];
-$month = 6;
+$month = $_POST['month'];
+//$month = 6;
 
 $array = array();
 

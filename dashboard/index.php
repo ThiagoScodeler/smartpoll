@@ -1,5 +1,5 @@
 <?php
-     include ("includes/session.php");
+include ("includes/session.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -76,11 +76,28 @@
 					</div>
 					<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 						<h1 class="page-header">Welcome</h1>
-
+						<div class=></div>
+						<label >
+							Select month:
+							<select id="month" class="form-control">
+								<option value="1">January</option>
+								<option value="2">February</option>
+								<option value="3">March</option>
+								<option value="4">April</option>
+								<option value="5">May</option>
+								<option value="6">June</option>
+								<option value="7">July</option>
+								<option value="8">August</option>
+								<option value="9">September</option>
+								<option value="10">October</option>
+								<option value="11">November</option>
+								<option value="11">Dezember</option>
+							</select>
+						</label>
 						<!-- Line Chart -->
 						<div id="lineChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
-
+						
 
 						<!-- Modal -->
 						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
