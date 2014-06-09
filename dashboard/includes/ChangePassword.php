@@ -5,13 +5,17 @@
   //--------------------------------------------------------------------------
 include ("connection.php");
 
+session_start();
+
+
   //--------------------------------------------------------------------------
   // 2) Query database for data
   //--------------------------------------------------------------------------
 
-$password = mysql_real_escape_string($_POST['password']);
-$newPassword = mysql_real_escape_string($_POST['newPassword']);
-$confirmNewPassword = mysql_real_escape_string($_POST['confirmNewPassword']);
+$password = md5($_POST['password']);
+$newPassword = md5($_POST['newPassword']);
+$confirmNewPassword = md5($_POST['confirmNewPassword']);
+
 
 $sql  = "SELECT * FROM user where id = 1";
 $result = mysql_query($sql); //execute query
@@ -32,6 +36,8 @@ else{
 
 	if(($resultChange)) {
 		print '1'; //password changed//
+		 unset($_SESSION['password_session']);
+         $_SESSION['password_session'] = $newPassword;
 	}else {
 		print'2'; //fault in change the password//
 	}

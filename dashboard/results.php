@@ -60,7 +60,7 @@
 							</li>
 							<li><a href="#" class="changePassword">Change Password</a></li>
 							<li><a href="files/user_guide.pdf">Help</a></li>
-							<li><a href="../">Logout</a></li>
+							<li><a href="includes/sessionExit.php" onclick="return confirm('Are you sure?')">Logout</a></li>
 						</ul>
 					</div>
 				</div>

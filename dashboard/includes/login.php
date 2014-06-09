@@ -12,7 +12,7 @@ session_start();
   //--------------------------------------------------------------------------
 
 $email = mysql_real_escape_string($_POST['email']);
-$password = mysql_real_escape_string($_POST['password']);
+$password = md5($_POST['password']);
 
 $sql  = "SELECT * FROM user where email = '$email' and password = '$password'";
 
