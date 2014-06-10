@@ -33,7 +33,7 @@ $(function () {
 
 
 	$(".add-answer").click(function () {
-		if($("div.input-answer").length < 6){
+		if($("div.input-answer").length < 20){
 			newAnswer = $("div.input-answer:first").clone();
 			newAnswer.find("input").val("");
 			newAnswer.insertAfter("div.input-answer:last");

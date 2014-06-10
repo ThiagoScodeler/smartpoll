@@ -22,7 +22,6 @@ function showLineChart () {
  
 
         var month = $("#month option:selected").val();
-        console.log()
 
         $.ajax({
             url: 'includes/getDataLineChart.php',
@@ -31,9 +30,12 @@ function showLineChart () {
             dataType: 'json',
             success: function(json) {
 
+                today = new Date();
+                currentYear = today.getFullYear();
+
                 var series = new Array();
 
-                var lastDay = (new Date(2014, month, 0)).getDate();
+                var lastDay = (new Date(currentYear, month, 0)).getDate();
 
                 var categories = new Array();
 
